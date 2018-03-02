@@ -41,9 +41,9 @@ class BannerLayoutAttributes: UICollectionViewLayoutAttributes {
 public class MMBannerLayout: UICollectionViewLayout {
     public var focusIndexPath: IndexPath? {
         didSet {
-            guard let f = focusIndexPath, (focusIndexPath != oldValue) else {
-                return
-            }
+//            guard let f = focusIndexPath, (focusIndexPath != oldValue) else {
+//                return
+//            }
             
             (self.collectionView!.delegate as? BannerLayoutDelegate)?.collectionView?(self.collectionView!, focusAt: f)
         }
@@ -92,7 +92,6 @@ public class MMBannerLayout: UICollectionViewLayout {
                 let x = self.collectionView!.contentOffset.x + attr.realFrame.midX - centerX
                 self.collectionView!.setContentOffset(CGPoint(x: x, y: 0), animated: isAnimate)
             }
-            self.focusIndexPath = IndexPath(item: currentIdx, section: 0)
             self._currentIdx = newValue
             
         } get {
