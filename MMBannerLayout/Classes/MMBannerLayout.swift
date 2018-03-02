@@ -92,6 +92,7 @@ public class MMBannerLayout: UICollectionViewLayout {
                 let x = self.collectionView!.contentOffset.x + attr.realFrame.midX - centerX
                 self.collectionView!.setContentOffset(CGPoint(x: x, y: 0), animated: isAnimate)
             }
+            self.focusIndexPath = IndexPath(item: currentIdx, section: 0)
             self._currentIdx = newValue
             
         } get {
