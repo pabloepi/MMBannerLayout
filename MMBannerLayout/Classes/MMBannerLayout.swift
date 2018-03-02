@@ -93,7 +93,6 @@ public class MMBannerLayout: UICollectionViewLayout {
                 self.collectionView!.setContentOffset(CGPoint(x: x, y: 0), animated: isAnimate)
             }
             self._currentIdx = newValue
-            (self.collectionView!.delegate as? BannerLayoutDelegate)?.collectionView?(self.collectionView!, focusAt: IndexPath(item: self._currentIdx, section: 0))
         } get {
             return _currentIdx
         }
