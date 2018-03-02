@@ -209,6 +209,11 @@ public class MMBannerLayout: UICollectionViewLayout {
         if self.collectionView!.calculate.isNeedUpdate() {
             attributeList.removeAll()
             attributeList = self.generateAttributeList()
+            if attributeList.isEmpty {
+                self._currentIdx = 0
+            } else if self._currentIdx > attributeList.count-1 {
+                self._currentIdx = attributeList.count-1
+            }
             let reset = self._isInfinite
             self._isInfinite = reset
         }
